@@ -399,11 +399,11 @@ function tgBotNotify(text, desp) {
 function ddBotNotify(text, desp) {
   return new Promise((resolve) => {
     const options = {
-      url: `https://oapi.dingtalk.com/robot/send?access_token=${DD_BOT_TOKEN}`,
+      url: `https://open.feishu.cn/open-apis/bot/v2/hook/${DD_BOT_TOKEN}`,
       json: {
         msgtype: 'text',
-        text: {
-          content: ` ${text}\n\n${desp}`,
+        content: {
+          text: ` ${text}\n\n${desp}`,
         },
       },
       headers: {
